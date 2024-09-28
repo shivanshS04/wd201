@@ -51,6 +51,9 @@ const todoList = () => {
     // as per the format given above.
     var response = "";
     list.map((item) => {
+      if (response.length != 0) {
+        response += "\n";
+      }
       if (item.completed) {
         response += "[x] ";
       } else {
@@ -61,7 +64,6 @@ const todoList = () => {
       if (item.dueDate != today) {
         response += item.dueDate;
       }
-      response += "\n";
     });
     return response;
   };
